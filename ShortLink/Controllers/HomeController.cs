@@ -14,9 +14,7 @@ namespace ShortLink.Controllers
         public ActionResult Index()
         {
             var allLinks = db.Urls.OrderBy(x => x.GenerationDate);
-            return Request.IsAjaxRequest()
-                ? (ActionResult)PartialView("_links", allLinks)
-                : View(allLinks);
+            return View(allLinks);
         }
 
         [Route("{url}")]
