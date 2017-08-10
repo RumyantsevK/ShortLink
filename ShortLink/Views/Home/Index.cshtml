@@ -1,0 +1,23 @@
+﻿@model IEnumerable<ShortLink.Models.Url>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h3>Сервис генерации коротких ссылок</h3>
+
+
+<form id="addUrl">
+    <input type="text" placeholder="Оригинальная ссылка" name="longUrl" />
+    <input type="submit" value="Сократить" />
+</form>
+<br />
+
+<div id="links">
+    @Html.Partial("_Links", Model)
+</div>
+
+@section scripts {
+    @Scripts.Render("/Scripts/main.js")
+}
+
+
