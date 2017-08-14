@@ -3,7 +3,7 @@
     $('#addUrl').submit(function () {
         $.post('/Home/AddUrl', $('#addUrl').serialize(), function (data) {
             console.log(data);
-            if ($('#url').val() != '') {
+            if ($('#url').val() !== '') {
                 $('#links').append(data);
             }
             else {
