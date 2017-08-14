@@ -7,14 +7,24 @@
 
 
 <form id="addUrl">
-    <input type="text" placeholder="Оригинальная ссылка" name="longUrl" />
+    <input id="url" type="text" placeholder="Оригинальная ссылка" name="longUrl" />
     <input type="submit" value="Сократить" />
 </form>
 <br />
 
-<div id="links">
-    @Html.Partial("_Links", Model)
-</div>
+<table>
+    <thead>
+        <tr>
+            <th>Оригинальная ссылка</th>
+            <th>Дата создания</th>
+            <th>Короткая ссылка</th>
+            <th>Число переходов</th>
+        </tr>
+    </thead>
+    <tbody id="links">
+       @Html.Partial("_Links", Model)
+    </tbody>
+</table>
 
 @section scripts {
     @Scripts.Render("/Scripts/main.js")

@@ -23,6 +23,8 @@ namespace ShortLink.Controllers
             var link = db.Urls.Where(x => x.ShortUrl == url).FirstOrDefault();
             if (link != null)
             {
+                link.ClickCount += 1;
+                db.SaveChanges();
                 return Redirect(link.LongUrl);
             }
             else
@@ -37,7 +39,7 @@ namespace ShortLink.Controllers
             if (!String.IsNullOrEmpty(longUrl))
             {
                 var shortUrl = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Replace("+", "").Replace("/", "").Substring(0, 5);
-                if (!db.Urls.Any(x => x.ShortUrl == shortUrl || x.LongUrl == longUrl))
+                if (!db.Urls.Any(x => x.ShortUrl == shortUrl))
                 {
                     var link = new Url
                     {
@@ -47,6 +49,9 @@ namespace ShortLink.Controllers
                     };
                     db.Urls.Add(link);
                     db.SaveChanges();
+                    var newLink = new List<Url>();
+                    newLink.Add(link);
+                    return PartialView("_Links", newLink);
                 }
             }
             var allLinks = db.Urls.OrderBy(x => x.GenerationDate);

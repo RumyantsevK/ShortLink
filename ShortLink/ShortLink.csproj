@@ -161,6 +161,10 @@
     <Compile Include="Migrations\201708072111310_GenerationDate.Designer.cs">
       <DependentUpon>201708072111310_GenerationDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708141601459_ClickCount.cs" />
+    <Compile Include="Migrations\201708141601459_ClickCount.Designer.cs">
+      <DependentUpon>201708141601459_ClickCount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SiteContext.cs" />
     <Compile Include="Models\Url.cs" />
@@ -236,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708072111310_GenerationDate.resx">
       <DependentUpon>201708072111310_GenerationDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708141601459_ClickCount.resx">
+      <DependentUpon>201708141601459_ClickCount.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

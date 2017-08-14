@@ -2,7 +2,13 @@
     
     $('#addUrl').submit(function () {
         $.post('/Home/AddUrl', $('#addUrl').serialize(), function (data) {
-            $('#links').html(data);
+            console.log(data);
+            if ($('#url').val() != '') {
+                $('#links').append(data);
+            }
+            else {
+                $('#links').html(data);
+            }
             $('#addUrl').each(function () {
                 this.reset();
             });

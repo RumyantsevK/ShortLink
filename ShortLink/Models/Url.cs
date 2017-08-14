@@ -12,5 +12,6 @@ namespace ShortLink.Models
         public string ShortUrl { get; set; }
         public string LongUrl { get; set; }
         public DateTime GenerationDate { get; set; }
+        public int ClickCount { get; set; }
     }
 }

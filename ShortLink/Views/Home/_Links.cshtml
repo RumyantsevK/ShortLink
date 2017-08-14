@@ -1,21 +1,11 @@
 ﻿@model IEnumerable<ShortLink.Models.Url>
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>Оригинальная ссылка</th>
-            <th>Короткая ссылка</th>
-            <th>Дата создания</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
+@foreach (var item in Model)
         {
             <tr>
                 <td><a href="@item.LongUrl">@item.LongUrl</a></td>
-                <td><a href="http://localhost:11056/@item.ShortUrl">http://localhost:11056/@item.ShortUrl</a></td>
                 <td>@item.GenerationDate</td>
+                <td><a href="http://localhost:11056/@item.ShortUrl">http://localhost:11056/@item.ShortUrl</a></td>
+                <td>@item.ClickCount</td>
             </tr>
         }
-    </tbody>
-</table>
