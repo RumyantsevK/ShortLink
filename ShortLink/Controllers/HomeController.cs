@@ -49,8 +49,10 @@ namespace ShortLink.Controllers
                     };
                     db.Urls.Add(link);
                     db.SaveChanges();
-                    var newLink = new List<Url>();
-                    newLink.Add(link);
+                    var newLink = new List<Url>
+                    {
+                        link
+                    };
                     return PartialView("_Links", newLink);
                 }
             }

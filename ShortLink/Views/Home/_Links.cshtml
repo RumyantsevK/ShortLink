@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<ShortLink.Models.Url>
 
 @foreach (var item in Model)
-        {
-            <tr>
-                <td><a href="@item.LongUrl">@item.LongUrl</a></td>
-                <td>@item.GenerationDate</td>
-                <td><a href="http://localhost:11056/@item.ShortUrl">http://localhost:11056/@item.ShortUrl</a></td>
-                <td>@item.ClickCount</td>
-            </tr>
-        }
+{
+    <tr>
+        <td><a href="@item.LongUrl">@item.LongUrl</a></td>
+        <td>@item.GenerationDate</td>
+        <td><a href="http://localhost:11056/@item.ShortUrl">http://localhost:11056/@item.ShortUrl</a></td>
+        <td>@item.ClickCount</td>
+    </tr>
+}
